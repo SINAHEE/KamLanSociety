@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>金蘭會 금란회</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
+<style>
+/* VOICE occasion, hushed and formal: a society's 104th-anniversary site, 1997
+   IDEA a temple gate: black lacquer plaque, gold leaf, a couplet on each side, vermilion seal
+   PICTURE the society's emblem — seven gold orchids ringing a seal — framed by the couplet
+   COLOUR lacquer black ground, dark crimson support, gold leaf accent; each hall its own ink
+   TYPE Noto Serif TC for hanzi display + Noto Serif KR for text
+   LAYOUT laptop: couplet | emblem | couplet, title beneath; phone: emblem, title, couplet in one row */
+:root{color-scheme:dark;--bg:#0c0908;--pan:#15100e;--pan2:#1d1512;--line:#3a2a20;--ink:#efe6d6;--mute:#b9aa92;--red:#7a1414;--red2:#a8231d;--gold:#c9a24a;--gold2:#ecd593}
+:root[data-theme=light]{color-scheme:dark}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:64px;scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 "Noto Serif KR","Noto Serif TC",serif;overflow-x:clip}
+a{color:var(--gold2)}
+.hz{font-family:"Noto Serif TC","Noto Serif KR",serif}
+.band{padding-block:clamp(40px,6vw,88px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1180px;margin:0 auto}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;padding:0 max(5vw,16px);max-width:none}
+nav .brand{display:flex;align-items:center;gap:10px;flex:none;text-decoration:none;color:var(--gold2);font-weight:900;font-size:18px;padding:10px 0}
+nav .brand svg{width:34px;height:34px}
+nav .scroll{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav .scroll a{flex:none;color:var(--mute);text-decoration:none;font-size:15px;padding:16px 10px;border-bottom:2px solid transparent}
+nav .scroll a:hover,nav .scroll a:focus-visible{color:var(--gold2);border-bottom-color:var(--gold)}
+.hero{background:radial-gradient(ellipse at 50% 38%,#2a0d0b 0%,var(--bg) 62%);border-bottom:1px solid var(--line);padding-top:clamp(28px,4vw,56px)}
+.gate{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px) minmax(0,1fr);align-items:center;gap:clamp(16px,3vw,40px);max-width:1180px;margin:0 auto}
+.couplet{justify-self:center;writing-mode:vertical-rl;font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(30px,3.6vw,46px);letter-spacing:.35em;color:var(--gold2);background:linear-gradient(180deg,#8a1a16,#5d0f0d);padding:28px 18px;border:1px solid #b4823a;box-shadow:inset 0 0 0 4px #5d0f0d,inset 0 0 0 5px #b4823a}
+.emblem svg{width:100%;height:auto;display:block}
+.title{text-align:center;padding:clamp(20px,3vw,36px) 0 0}
+.title h1{margin:0;font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(56px,9vw,104px);line-height:1;letter-spacing:.12em;color:var(--gold2);text-shadow:0 2px 0 #4a2a10}
+.title .ko{font-size:clamp(18px,2vw,22px);color:var(--ink);margin-top:10px}
+.title .en{color:var(--mute);font-size:15px}
+.title p.lead{max-width:640px;margin:20px auto 0;color:var(--ink);text-wrap:balance}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(9em,1fr));gap:1px;background:var(--line);border:1px solid var(--line);max-width:1180px;margin:clamp(28px,4vw,48px) auto 0}
+.facts div{background:var(--pan);padding:16px 18px}
+.facts b{display:block;font-size:clamp(24px,3vw,32px);color:var(--gold2);font-weight:900;line-height:1.2;white-space:nowrap}
+.facts span{color:var(--mute);font-size:14px}
+h2{margin:0 0 6px;font-size:clamp(32px,4.4vw,48px);line-height:1.1;font-weight:900;color:var(--gold2);text-wrap:balance}
+h2 .hz{margin-right:.4em}
+h2 small{display:block;font-size:17px;color:var(--mute);font-weight:400;margin-top:8px;font-family:"Noto Serif KR",serif}
+h3{margin:0 0 8px;font-size:21px;line-height:1.3;color:var(--ink)}
+.intro{max-width:720px;color:var(--ink)}
+.alt{background:var(--pan)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(18px,2.4vw,32px);margin-top:28px}
+.card{background:var(--pan2);border:1px solid var(--line);padding:22px}
+.card p{margin:0 0 10px}.card p:last-child{margin:0}
+.mute{color:var(--mute)}
+.split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);margin-top:28px;align-items:start}
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--red2)}
+.tl li{position:relative;padding:0 0 26px 26px}
+.tl li::before{content:"";position:absolute;left:-8px;top:8px;width:14px;height:14px;background:var(--bg);border:2px solid var(--gold);transform:rotate(45deg)}
+.tl li.dark::before{background:var(--red2);border-color:var(--red2)}
+.tl .yr{font-weight:900;color:var(--gold2);font-size:19px;white-space:nowrap}
+.tl .nm{margin-left:10px;color:var(--ink);font-weight:600}
+.tl p{margin:4px 0 0;color:var(--mute)}
+.founders{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px}
+.founder{border:1px solid var(--line);background:var(--pan2);padding:14px;display:flex;gap:12px;align-items:flex-start}
+.founder .v{flex:none;width:44px;height:44px;display:grid;place-items:center;background:var(--red);color:var(--gold2);font:900 24px "Noto Serif TC",serif;border:1px solid #b4823a}
+.founder b{display:block;font-size:16px}
+.founder span{font-size:14px;color:var(--mute);line-height:1.5;display:block}
+.org{display:grid;gap:10px;margin-top:28px}
+.tier{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.node{border:1px solid var(--line);background:var(--pan2);padding:10px 16px;text-align:center;min-width:120px}
+.node b{display:block;font-size:17px}
+.node span{font-size:13px;color:var(--mute)}
+.node.top{border-color:var(--gold);background:linear-gradient(180deg,#3a120f,#1d0c0a)}
+.node.top b{color:var(--gold2);font-size:20px}
+.node.side{border-style:dashed}
+.arrow{text-align:center;color:var(--gold);font-size:14px;line-height:1}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--gold2);font-weight:600;background:var(--pan2)}
+td.n{white-space:nowrap;color:var(--gold2);font-weight:600}
+.halls{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:18px;margin-top:28px}
+.hall{background:var(--pan2);border:1px solid var(--line);border-top:3px solid var(--c);padding:22px;display:flex;flex-direction:column;gap:12px}
+.hall header{display:flex;gap:16px;align-items:center}
+.seal{flex:none;width:64px;height:64px;display:grid;place-items:center;border:2px solid var(--c);color:var(--c);font:900 34px "Noto Serif TC",serif;background:color-mix(in srgb,var(--c) 12%,transparent)}
+.hall h3{margin:0;font-size:22px}
+.hall h3 .hz{color:var(--c);margin-right:6px}
+.hall .ord{font-size:14px;color:var(--mute)}
+.hall .motto{font-family:"Noto Serif TC",serif;font-size:18px;color:var(--ink);margin:0}
+.hall .motto+p{margin:-8px 0 0;color:var(--mute);font-size:15px}
+.meta{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;font-size:15px;margin:0}
+.meta dt{color:var(--mute);white-space:nowrap}
+.meta dd{margin:0}
+.bar{height:6px;background:var(--line);margin-top:6px}
+.bar i{display:block;height:100%;background:var(--c)}
+.hall p{margin:0}
+.hall .rel{font-size:15px;color:var(--mute);border-top:1px solid var(--line);padding-top:10px}
+.hall .rel b{color:var(--ink);font-weight:600}
+.mx td,.mx th{text-align:center;padding:9px 6px;font-size:15px;white-space:nowrap}
+.mx th:first-child{text-align:left}
+.mx .g{color:#e8cf8a}.mx .x{color:#e0574f}.mx .s{color:var(--line)}
+.legend{display:flex;flex-wrap:wrap;gap:18px;font-size:14px;color:var(--mute);margin-top:12px}
+.virtues{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:28px}
+.virtues div{background:var(--pan2);padding:18px 12px;text-align:center}
+.virtues .hz{display:block;font-size:40px;font-weight:900;color:var(--gold2);line-height:1.2}
+.virtues span{display:block;font-size:14px;color:var(--mute);line-height:1.5;margin-top:6px}
+.virtues em{display:block;font-style:normal;font-size:13px;color:var(--gold);margin-top:6px}
+.places{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px;margin-top:28px}
+.place{border:1px solid var(--line);background:var(--pan2);padding:20px}
+.place .hz{font-size:28px;font-weight:900;color:var(--gold2);display:block;line-height:1.2}
+.place .loc{font-size:14px;color:var(--mute);display:block;margin:4px 0 10px}
+.place p{margin:0;font-size:15px}
+.closing{text-align:center;background:linear-gradient(180deg,var(--bg),#1e0807)}
+.closing p{max-width:560px;margin:0 auto 14px;color:var(--ink)}
+.closing .q{font-family:"Noto Serif TC",serif;font-size:clamp(28px,4vw,40px);color:var(--gold2);font-weight:900;margin-top:28px;letter-spacing:.1em}
+footer{border-top:1px solid var(--line);padding:28px max(5vw,16px);color:var(--mute);font-size:14px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+footer .f{display:flex;align-items:center;gap:12px}
+footer svg{width:44px;height:44px}
+@media(max-width:860px){.split{grid-template-columns:minmax(0,1fr)}.virtues{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:700px){
+.gate{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"e e" "l r"}
+.emblem{grid-area:e;max-width:440px;justify-self:center;width:100%}
+.couplet.l{grid-area:l}.couplet.r{grid-area:r}
+.couplet{writing-mode:horizontal-tb;letter-spacing:.2em;font-size:24px;padding:12px 16px;justify-self:stretch;text-align:center}
+.virtues{grid-template-columns:repeat(2,minmax(0,1fr))}
+nav .brand span{display:none}
+}
+@media(max-width:600px){table{font-size:14px}th,td{padding:8px 6px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flex;justify-content:space-between;gap:14px;border:0;padding:3px 0;text-align:right}.stack td::before{content:attr(data-l);color:var(--mute);text-align:left;flex:none}}
+</style>
+<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<linearGradient id="gl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6e3a4"/><stop offset=".55" stop-color="#d2a94e"/><stop offset="1" stop-color="#8e6a26"/></linearGradient>
+<linearGradient id="gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1dc98"/><stop offset="1" stop-color="#9a7128"/></linearGradient>
+<radialGradient id="lac" cx=".5" cy=".42" r=".6"><stop offset="0" stop-color="#2a0e0c"/><stop offset="1" stop-color="#0d0807"/></radialGradient>
+<symbol id="orchid" viewBox="-40 -40 80 80" overflow="visible">
+<g fill="url(#gl)" stroke="#5a3d12" stroke-width=".8">
+<path d="M0 0C-6-10-5-27 0-35C5-27 6-10 0 0Z"/>
+<path transform="rotate(128)" d="M0 0C-6-10-5-25 0-32C5-25 6-10 0 0Z"/>
+<path transform="rotate(-128)" d="M0 0C-6-10-5-25 0-32C5-25 6-10 0 0Z"/>
+<path transform="rotate(-62)" d="M0 0C-9-5-12-17-5-24C1-21 4-9 0 0Z"/>
+<path transform="rotate(62) scale(-1 1)" d="M0 0C-9-5-12-17-5-24C1-21 4-9 0 0Z"/>
+<path d="M0 2C-8 6-9 15 0 19C9 15 8 6 0 2Z" fill="url(#gd)"/>
+</g>
+<circle r="2.6" fill="#8a1a16"/>
+</symbol>
+<symbol id="crest" viewBox="0 0 400 400">
+<circle cx="200" cy="200" r="196" fill="url(#lac)"/>
+<circle cx="200" cy="200" r="192" fill="none" stroke="#c9a24a" stroke-width="3"/>
+<circle cx="200" cy="200" r="183" fill="none" stroke="#c9a24a" stroke-width="1"/>
+<path id="ring" d="M200 200m-166 0a166 166 0 1 1 332 0a166 166 0 1 1-332 0" fill="none"/>
+<text font-family="Noto Serif TC,serif" font-size="17" font-weight="600" fill="#c9a24a" letter-spacing="5"><textPath href="#ring" startOffset="0">義重於命 · 忠高於血 · KAM LAN SOCIETY · 光緒十九年 · 一八九三 ·</textPath></text>
+<circle cx="200" cy="200" r="148" fill="none" stroke="#c9a24a" stroke-width="1.5"/>
+<g id="ors"></g>
+<circle cx="200" cy="200" r="74" fill="#6e1311" stroke="#e2c271" stroke-width="2.5"/>
+<circle cx="200" cy="200" r="67" fill="none" stroke="#e2c271" stroke-width="1"/>
+<text x="200" y="196" text-anchor="middle" font-family="Noto Serif TC,serif" font-weight="900" font-size="52" fill="#f1dc98">金蘭</text>
+<text x="200" y="236" text-anchor="middle" font-family="Noto Serif TC,serif" font-weight="600" font-size="20" fill="#e2c271" letter-spacing="8">總堂</text>
+</symbol>
+</defs>
+</svg>
+
+<nav aria-label="본회 안내">
+<div class="wrap">
+<a class="brand" href="#top"><svg viewBox="0 0 400 400"><use href="#crest"/></svg><span class="hz">金蘭會</span></a>
+<div class="scroll">
+<a href="#about">본회 소개</a><a href="#history">연혁</a><a href="#org">조직</a><a href="#halls">칠당</a><a href="#spirit">정신과 문화</a><a href="#places">주요 장소</a><a href="#three">삼대흑방</a><a href="#outside">외부 사회</a>
+</div>
+</div>
+</nav>
+
+<header class="hero band" id="top">
+<div class="gate">
+<div class="couplet l" aria-label="대련 상련">義重於命</div>
+<div class="emblem" role="img" aria-label="금란회 문장: 일곱 송이 금빛 난초가 금란총당 인장을 둘러싼 원형 문장">
+<svg viewBox="0 0 400 400" id="hero-crest"><use href="#crest"/></svg>
+</div>
+<div class="couplet r" aria-label="대련 하련">忠高於血</div>
+</div>
+<div class="title">
+<h1>金蘭會</h1>
+<div class="ko">금란회 · 창립 104주년</div>
+<div class="en">Kam Lan Society · Gam1 Laan4 Wui6 · 1893 — 1997</div>
+<p class="lead">의리는 목숨보다 무겁고, 충성은 혈연보다 높다. 광둥에서 건너온 일곱 의형제의 맹세로 시작된 구룡의 형제 결사, 금란회의 공식 안내다.</p>
+</div>
+<div class="facts">
+<div><b>1893</b><span>창립 · 광서 19년</span></div>
+<div><b>104년</b><span>삼대흑방 중 최고(最古)</span></div>
+<div><b>약 3,000</b><span>정식 조직원</span></div>
+<div><b>약 8,000</b><span>외곽 포함 관계 인원</span></div>
+<div><b>七堂</b><span>일곱 산하 지부</span></div>
+</div>
+</header>
+
+<section class="band" id="about">
+<div class="wrap">
+<h2><span class="hz">本會簡介</span>본회 소개<small>마음을 함께하는 이들의 말은 난초처럼 향기롭다 · 同心之言，其臭如蘭</small></h2>
+<div class="split">
+<div class="intro">
+<p>금란(金蘭)은 『주역』 계사전의 한 구절에서 온 말로, 혈연을 넘어선 굳은 우정과 형제의 연을 뜻한다. 서로 다른 성씨와 고향을 지닌 일곱 창립자는 자신들의 관계가 피보다 깊고 쇠보다 단단하기를 바라며 이 이름을 택했다.</p>
+<p>본회는 청나라 말기 홍콩 부두의 이주민과 노동자를 위한 상호부조 결사로 출발했다. 백 년의 세월을 지나며 구룡반도 암흑가의 거대한 조직이 되었으나, 지금도 수장의 자리는 혈통이 아닌 공적과 연륜, 형제들의 지지로 이어진다.</p>
+<p>조직원 수로는 천룡회에, 재력으로는 영성회에 미치지 못한다. 그러나 역사적 권위와 명망, 내부의 결속만큼은 홍콩 어느 조직도 따르지 못한다고 형제들은 말한다.</p>
+<p class="mute">그 의리와 명예가 때로 폭력과 억압, 복종을 정당화하는 명분이 되어 왔다는 것 역시 금란회의 역사다.</p>
+</div>
+<div class="scroll">
+<table class="stack">
+<thead><tr><th>항목</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td>정식 명칭</td><td>金蘭會 (Kam Lan Society)</td></tr>
+<tr><td>조직 형태</td><td>전통 삼합회 · 비세습제</td></tr>
+<tr><td>근거지</td><td>구룡반도 (야우마테이·몽콕·침사추이 일대)</td></tr>
+<tr><td>중앙 본당</td><td>금란총당(金蘭總堂)</td></tr>
+<tr><td>최고 수장</td><td>산주(山主) 1인</td></tr>
+<tr><td>수호신</td><td>관성제군 관우(關羽)</td></tr>
+<tr><td>문장</td><td>일곱 송이의 금빛 난초</td></tr>
+<tr><td>대표 색상</td><td>흑색 · 암적색 · 금색</td></tr>
+<tr><td>회명부</td><td>금란보(金蘭譜) — 입회한 형제의 이름을 적는 명부</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+
+<section class="band alt" id="history">
+<div class="wrap">
+<h2><span class="hz">本會沿革</span>연혁<small>일곱 의형제의 결사에서 구룡의 백년 조직까지</small></h2>
+<div class="split">
+<ol class="tl" id="tl"></ol>
+<div>
+<h3><span class="hz">七祖</span> 일곱 창립자</h3>
+<p class="mute" style="margin:0 0 16px">본회는 창립자들을 칠조(七祖)라 높여 부르며, 칠조가 각기 남긴 한 글자를 일곱 가지 정신으로 계승한다. 칠당은 전후 재건기에 이 일곱 정신을 하나씩 이어받아 세워졌다.</p>
+<div class="founders" id="founders"></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="band" id="org">
+<div class="wrap">
+<h2><span class="hz">組織體系</span>조직 체계<small>산주 아래 중앙 지도부와 칠당, 그리고 그 곁의 원로회</small></h2>
+<div class="org" aria-label="금란회 조직도">
+<div class="tier"><div class="node top"><b>山主 산주</b><span>최고 수장 · 489 · 1명</span></div></div>
+<div class="tier"><div class="node"><b>副山主 부산주</b><span>이인자 · 438 · 1명</span></div><div class="node side"><b>元老會 원로회</b><span>서열 밖의 자문·견제 · 7명</span></div></div>
+<div class="arrow">▼</div>
+<div class="tier"><div class="node"><b>香主 향주</b><span>의례의 권위 · 438 · 1명</span></div><div class="node"><b>堂主 칠당 당주</b><span>각 당의 실권 · 7명</span></div></div>
+<div class="arrow">▼</div>
+<div class="tier"><div class="node"><b>副堂主 부당주</b><span>각 당의 이인자 · 7명</span></div></div>
+<div class="arrow">▼</div>
+<div class="tier"><div class="node"><b>紅棍 홍곤</b><span>무력 · 426</span></div><div class="node"><b>白紙扇 백지선</b><span>참모 · 415</span></div><div class="node"><b>草鞋 초혜</b><span>대외 · 432</span></div></div>
+<div class="tier"><span class="mute" style="font-size:14px">중앙 직속 또는 각 당 소속 · 여러 명</span></div>
+<div class="arrow">▼</div>
+<div class="tier"><div class="node"><b>四九仔 사구자</b><span>정식 조직원 · 49</span></div><div class="node side"><b>外圍 외곽</b><span>비조직원 관계 인원</span></div></div>
+</div>
+<p class="mute" style="max-width:760px;margin:24px 0 0">숫자 호칭은 오래된 홍문(洪門) 전통에서 온 역할 등급으로, 모두 사해(四海)를 뜻하는 4로 시작한다. 438은 한 자리가 아니라 산주 바로 아래의 높은 자리를 묶어 가리키는 등급이라 부산주와 향주가 함께 쓴다. 당주와 부당주는 지부를 맡은 직책이라 숫자 호칭이 따로 없으며, 홍곤 출신 당주라면 "진무당 당주이자 426"처럼 둘을 함께 지닌다. 칠당의 정식 조직원은 2,900명이며, 나머지 약 100명은 중앙 지도부와 금란총당 직속이다.</p>
+<div class="scroll" style="margin-top:28px">
+<table class="stack">
+<thead><tr><th>직책</th><th>호칭</th><th>인원</th><th>역할</th></tr></thead>
+<tbody id="ranks"></tbody>
+</table>
+</div>
+<div class="cols">
+<div class="card"><h3>비세습제</h3><p>산주의 자리는 어느 가문에도 물려지지 않는다. 공적과 명성, 원로들의 신뢰, 칠당의 지지를 함께 따져 정하며, 산주의 자녀라도 조건을 채우지 못하면 오를 수 없다.</p><p class="mute">다만 현실에서는 혈연과 사적인 친분이 영향력에 작용하기도 한다.</p></div>
+<div class="card"><h3>원로와 현직</h3><p>원로회는 현직 지도부를 존중하되, 선대의 전통이 훼손된다고 보면 반대한다. 후계 문제와 중대한 내부 분쟁에서 그들의 말은 공식 직책 이상의 무게를 지닌다.</p><p class="mute">특정 원로를 스승이나 아버지처럼 따르는 현직 간부도 적지 않다.</p></div>
+<div class="card"><h3>직책과 명성</h3><p>계급과 존경은 늘 일치하지 않는다. 젊은 당주보다 오래된 홍곤이, 현직 간부보다 은퇴한 원로가 더 큰 존경을 받을 수 있다. 금란회의 권력은 직급표만으로 읽히지 않는다.</p></div>
+</div>
+</div>
+</section>
+
+<section class="band alt" id="halls">
+<div class="wrap">
+<h2><span class="hz">七堂</span>칠당<small>칠조의 일곱 정신을 하나씩 이어받은 일곱 산하 지부 · 총 2,900명</small></h2>
+<p class="intro">칠당은 서로 다른 조직이 아니라 하나의 금란회에 속한다. 각 당은 고유의 역사와 상징, 관할 구역, 내부 문화를 지니지만 당의 성향이 소속 인물 한 사람 한 사람의 성격이나 직책을 정하지는 않는다.</p>
+<div class="halls" id="hallgrid"></div>
+<h3 style="margin-top:48px">칠당 사이의 관계</h3>
+<p class="mute" style="margin:0 0 16px;max-width:720px">집단의 경향일 뿐이다. 갈등하는 당끼리도 친형제 같은 사이가 있고, 같은 당 안에서도 원한은 생긴다.</p>
+<div class="scroll"><table class="mx" id="mx"></table></div>
+<div class="legend"><span><b class="g" style="color:#e8cf8a">◎</b> 우호</span><span><b style="color:#e0574f">✕</b> 갈등이 잦음</span><span><b style="color:var(--mute)">·</b> 거리를 둔 존중</span></div>
+</div>
+</section>
+
+<section class="band" id="spirit">
+<div class="wrap">
+<h2><span class="hz">七精神</span>정신과 문화<small>칠조의 이름으로 계승하는 일곱 가지 정신</small></h2>
+<div class="virtues" id="virtues"></div>
+<p class="mute" style="max-width:760px;margin:16px 0 0">금란회가 스스로를 정의하는 가치다. 조직의 실제 모습이 이 가치와 늘 일치하지는 않는다.</p>
+<div class="cols">
+<div class="card"><h3>형제(兄弟)</h3><p>금란회에서 형제는 동료가 아니라 혈연에 준하는 관계다. 오래 함께한 이들은 서로의 가족까지 챙긴다.</p><p class="mute">그러나 의리라는 이름으로 희생이 요구되거나, 형제의 연이 집착과 억압으로 변하기도 한다.</p></div>
+<div class="card"><h3>관우 신앙</h3><p>충의의 상징 관우를 수호신으로 모신다. 총당과 칠당의 주요 공간마다 관우상과 향로가 있으며, 그 앞에서는 거짓과 불경을 삼간다.</p><p class="mute">원로들에게는 신앙에 가깝고, 젊은 형제들에게는 전통에 가깝다.</p></div>
+<div class="card"><h3>입회와 금란보</h3><p>정식 입회는 칠조전에서 치른다. 천거인이 보증을 서고, 새 형제는 관우와 칠조 앞에 향을 올린 뒤 금란보에 이름을 올린다. 금란보에 오른 이름은 죽어서도 지우지 않는 것이 관례다.</p></div>
+</div>
+<div class="split">
+<div>
+<h3>연중 의례</h3>
+<div class="scroll">
+<table class="stack">
+<thead><tr><th>시기</th><th>의례</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td class="n">음력 정월 초</td><td>개당(開堂)</td><td>산주가 칠당주를 총당에 불러 한 해의 첫 향을 올린다.</td></tr>
+<tr><td class="n">청명</td><td>칠조 제사</td><td>칠조와 역대 산주의 묘소와 위패를 참배한다.</td></tr>
+<tr><td class="n">음력 6월 24일</td><td>관제탄(關帝誕)</td><td>관우 탄신 제례. 향주가 주관하며 한 해 중 가장 큰 의식이다.</td></tr>
+<tr><td class="n">음력 9월 9일</td><td>결의일(結義日)</td><td>1893년 칠조가 의형제를 맺은 날. 금란루에서 창립 기념 연회를 연다.</td></tr>
+<tr><td class="n">12월 8일</td><td>대붕괴 추모</td><td>1941년 일본군의 홍콩 침공일. 그때 잃은 형제들을 기린다.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div>
+<h3>호칭</h3>
+<div class="scroll">
+<table class="stack">
+<thead><tr><th>호칭</th><th>한자</th><th>뜻</th></tr></thead>
+<tbody id="titles"></tbody>
+</table>
+</div>
+<p class="mute" style="margin:10px 0 0;font-size:15px">나이와 직책, 친밀도에 따라 달라지며 작중에서는 광둥어 호칭이나 한국어 번역 호칭 모두 쓸 수 있다.</p>
+</div>
+</div>
+<div class="cols">
+<div class="card"><h3>문신과 장신구</h3><p>난초를 문신이나 장신구로 새기는 이들이 있지만 의무는 아니다. 원로들은 오래된 옥과 금반지를, 젊은 형제들은 목걸이와 반지, 귀걸이를 즐기며 소속 당의 상징을 쓰기도 한다.</p></div>
+<div class="card"><h3>조직원의 가족</h3><p>어려서부터 간부들을 삼촌, 형님이라 부르며 자라는 아이들이 있다. 그러나 조직원의 자녀가 자동으로 형제가 되지는 않는다. 자연스레 몸담는 이도, 부모의 삶을 증오하는 이도 있다.</p></div>
+<div class="card"><h3>연애와 혼인</h3><p>사적인 연애와 혼인을 금하지는 않는다. 다만 고위 간부의 혼사는 원로들의 관심을 피하기 어렵고, 다른 조직 사람과의 연애는 조직 간 갈등으로 번지기 쉽다.</p></div>
+<div class="card"><h3>형제들의 삶</h3><p>호화 저택에 사는 간부가 있는가 하면, 좁은 공영주택이나 낡은 당루(唐樓)에서 사는 사구자도 많다. 금란회 소속이라는 사실이 부나 세련됨을 뜻하지는 않는다.</p></div>
+</div>
+</div>
+</section>
+
+<section class="band alt" id="places">
+<div class="wrap">
+<h2><span class="hz">主要場所</span>주요 장소<small>구룡반도에 자리한 금란회의 공간들</small></h2>
+<div class="places" id="placegrid"></div>
+</div>
+</section>
+
+<section class="band" id="three">
+<div class="wrap">
+<h2><span class="hz">香港三大黑幫</span>홍콩 삼대흑방<small>어느 한 조직도 암흑가 전체를 갖지 못한 삼각 구도</small></h2>
+<div class="scroll" style="margin-top:28px">
+<table>
+<thead><tr><th>구분</th><th>金蘭會 금란회</th><th>天龍會 천룡회</th><th>永盛會 영성회</th></tr></thead>
+<tbody>
+<tr><td class="mute">영문 명칭</td><td>Kam Lan Society</td><td>Tin Lung Society</td><td>Wing Shing Society</td></tr>
+<tr><td class="mute">창립</td><td class="n">1893년 (104년)</td><td class="n">1936년 (61년)</td><td class="n">1958년 (39년)</td></tr>
+<tr><td class="mute">정식 조직원</td><td class="n">약 3,000명</td><td class="n">약 4,500명</td><td class="n">약 2,500명</td></tr>
+<tr><td class="mute">근거지</td><td>구룡반도</td><td>신계</td><td>홍콩섬</td></tr>
+<tr><td class="mute">성격</td><td>전통주의</td><td>무력주의</td><td>실리주의</td></tr>
+<tr><td class="mute">핵심 가치</td><td>의리와 명예</td><td>힘과 복종</td><td>이익과 번영</td></tr>
+<tr><td class="mute">상징 · 색</td><td>금빛 난초 · 흑·암적·금</td><td>붉은 용 · 적·흑</td><td>황금 사자 · 짙은 녹·금</td></tr>
+<tr><td class="mute">신조</td><td class="hz">義重於命，忠高於血</td><td class="hz">強者為龍，弱者俯首</td><td class="hz">黃金不言，利益不欺</td></tr>
+<tr><td class="mute">반환을 앞두고</td><td>전통과 존속을 지킨다</td><td>영향력 확대를 노린다</td><td>경제적 변화를 계산한다</td></tr>
+</tbody>
+</table>
+</div>
+<div class="cols">
+<div class="card" style="border-top:3px solid #c23b2e"><h3>천룡회 · 오랜 숙적</h3><p>1936년 여러 군소 결사가 합쳐 태어나 전후 신계의 팽창과 함께 컸다. 연륜보다 능력과 담력을 따지며, 젊은 간부가 많고 내부 권력 다툼이 잦다. 1970년대부터 금란회와 정면으로 겨뤄 왔다.</p><p class="mute">금란회는 그들을 근본도 의리도 없는 무리라 경멸하고, 그들은 금란회를 옛 명성에 기댄 늙은 조직이라 조롱한다. 두 조직 형제 사이의 친분은 그 자체로 의심을 산다.</p></div>
+<div class="card" style="border-top:3px solid #3f8a5e"><h3>영성회 · 견제와 협력</h3><p>1958년 상인 출신 인사들이 세웠고 홍콩섬의 금융과 상업을 따라 성장했다. 학력과 재산, 판단력이 높이 평가받고, 사업가나 상류층처럼 보이는 조직원이 많다.</p><p class="mute">금란회는 돈으로 맺은 관계는 언제든 무너진다고 믿고, 영성회는 금란회의 결속력을 경계한다. 금란회와 천룡회가 부딪칠 때 영성회의 입장이 암흑가의 균형을 가른다.</p></div>
+<div class="card"><h3>1997년 6월의 정세</h3><p>7월 1일 주권 반환까지 한 달. 세 조직 사이의 긴장은 높아지고 있으나 아직 전면적인 충돌은 없다.</p><p class="mute">천룡회는 영성회의 자본을 탐내면서도 그 계산적인 태도를 불쾌해하고, 영성회는 천룡회의 규모를 인정하면서도 그 공격성이 불안을 부른다고 본다.</p></div>
+</div>
+</div>
+</section>
+
+<section class="band alt" id="outside">
+<div class="wrap">
+<h2><span class="hz">堂外</span>외부 사회<small>안에서의 의리가 밖에서는 공포가 된다</small></h2>
+<div class="cols">
+<div class="card"><h3>왕립 홍콩 경찰</h3><p>삼대흑방과 맞서는 공권력이다. 금란회의 역사와 명망은 법적 책임을 면제하지 않으며, 본회 역시 수사와 감시의 대상이다. 1974년 염정공서(ICAC)가 생긴 뒤로 경찰과 암흑가의 오랜 유착은 크게 무너졌다.</p><p class="mute">경찰 안에도 저마다의 가치관과 사연을 지닌 사람들이 있다.</p></div>
+<div class="card"><h3>지역 주민</h3><p>평가는 극단으로 갈린다. 오래된 이웃처럼 여기며 조직원과 친분을 잇는 주민이 있는 반면, 금란회의 폭력으로 가족을 잃은 이들은 깊은 증오와 두려움을 품고 있다.</p></div>
+<div class="card"><h3>일반 시민</h3><p>대부분의 시민은 금란회의 존재를 알아도 내부 사정은 모른다. 그들에게 금란회는 백 년의 형제 결사가 아니라 위험한 범죄 조직이다. 삼대흑방은 암흑가의 주요 세력일 뿐, 홍콩 사회 전체를 다스리는 존재가 아니다.</p></div>
+</div>
+</div>
+</section>
+
+<section class="band closing">
+<div class="wrap">
+<p>1997년 6월. 한 시대가 저물고 있었다.</p>
+<p>빅토리아 항구 너머로 불빛이 번지고, 습한 밤공기에는 담배와 향 냄새가 뒤섞였다. 사람들은 다가오는 새로운 시대를 이야기했지만, 암흑가의 남자들은 여전히 백 년 전의 약속을 입에 올렸다.</p>
+<p>의리, 충성, 명예, 형제. 그 아름다운 단어들이 얼마나 많은 사람을 살리고, 또 얼마나 많은 사람을 죽게 했는지 아무도 헤아리지 않았다.</p>
+<p>금빛 난초는 여전히 피어 있었다. 그 뿌리가 무엇을 먹고 자랐는지는 아무도 묻지 않았다.</p>
+<div class="q">國旗易色，江湖不改。</div>
+<p class="mute">국기의 색은 바뀌어도 강호는 변하지 않는다.</p>
+</div>
+</section>
+
+<footer>
+<div class="f"><svg viewBox="0 0 400 400"><use href="#crest"/></svg><div><span class="hz" style="color:var(--gold2);font-weight:900">金蘭總堂</span><br>九龍 · 香港黑夜：一九九七</div></div>
+<div>이 페이지는 가상의 세계관 설정이다. 실존 단체·인물과 관계없다.</div>
+</footer>
+
+<script>
+{
+const ors=document.getElementById('ors');
+let g='';
+for(let i=0;i<7;i++){const a=i*360/7-90,r=111,x=200+r*Math.cos(a*Math.PI/180),y=200+r*Math.sin(a*Math.PI/180);g+=`<use href="#orchid" x="${(x-30).toFixed(1)}" y="${(y-30).toFixed(1)}" width="60" height="60" transform="rotate(${a+90} ${x.toFixed(1)} ${y.toFixed(1)})"/>`}
+for(let i=0;i<7;i++){const a=(i+.5)*360/7-90,r=111,x=200+r*Math.cos(a*Math.PI/180),y=200+r*Math.sin(a*Math.PI/180);g+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3" fill="#c9a24a"/>`}
+ors.innerHTML=g;
+
+const tl=[
+['1893','창립','광서 19년 음력 9월 9일, 광둥에서 건너온 일곱 남자가 의형제를 맺고 서로의 생계를 책임지는 작은 결사를 세웠다.'],
+['1893–1910','형성기','부두 노동자와 이주민, 영세 상인을 중심으로 성장. 칠조가 함께 대사를 논했고 모두가 서로를 형제라 불렀다. 관우를 모시는 전통이 이때 생겼다.'],
+['1910–1930년대','변질과 확장','규모가 커지며 상호부조 정신은 흐려지고 범죄와 폭력에 연루되기 시작했다. 산주라는 칭호와 간부 직책이 자리 잡았고, 칠조의 이상은 권위의 명분이 되어 갔다.'],
+['1941–1945','대붕괴(大崩壞)','일본의 홍콩 점령. 많은 형제가 죽거나 사라졌고 기록 대부분과 초기의 금란보가 불탔다. 본회 역사에서 가장 어두운 시대.',1],
+['1946–1950년대','재건기','살아남은 간부와 원로들이 조직을 다시 세웠다. 칠조의 정신을 잇는 칠당 체계와 원로회가 이 시기에 공식화되었다.'],
+['1960–1970년대','황금기','홍콩의 고도성장과 함께 전성기를 맞았다. 지금의 중앙 지도부와 칠당 위계가 확립되었고, 오늘의 원로 상당수가 이때 젊은 시절을 보냈다.'],
+['1980–1996','삼족정립(三足鼎立)','천룡회와 영성회의 성장으로 더는 압도적인 단일 세력이 아니게 되었다. 무리한 확장 대신 전통과 권위를 지키는 길을 택했다.'],
+['1997','창립 104주년','홍콩 암흑가에서 가장 오래된 조직. 원로들은 선대의 정신을 지키려 하고, 젊은 형제들은 백 년 전의 규율이 자신에게도 유효한지 묻는다.']
+];
+document.getElementById('tl').innerHTML=tl.map(t=>`<li${t[3]?' class="dark"':''}><span class="yr">${t[0]}</span><span class="nm">${t[1]}</span><p>${t[2]}</p></li>`).join('');
+
+const fd=[['義','맏형 진(陳)씨','부두 십장. 결의를 처음 제안했다. → 승의당'],['勇','둘째 양(梁)씨','쿨리 출신의 장사. → 진무당'],['仁','셋째 하(何)씨','한약방 주인. 아픈 이주민을 돌봤다. → 영안당'],['和','넷째 엽(葉)씨','선원. 뱃사람들을 형제로 묶었다. → 해룡당'],['禮','다섯째 주(周)씨','낙방한 서생. 결사의 규약을 썼다. → 명덕당'],['信','여섯째 이(李)씨','잡화상. 결사의 돈과 약속을 맡았다. → 광신당'],['忠','막내 황(黃)씨','말이 없던 막내. 대붕괴 이전 기록이 남지 않았다. → 현월당']];
+document.getElementById('founders').innerHTML=fd.map(f=>`<div class="founder"><div class="v">${f[0]}</div><div><b>${f[1]}</b><span>${f[2]}</span></div></div>`).join('');
+
+const rk=[['山主 산주','489 · 용두 · 대로','1명','금란회를 대표하는 최고 수장. 조직의 소유자가 아니라 선대의 전통을 잇는 사람으로 여겨진다. 두려움과 존경을 함께 받는 상징적 어른.'],
+['副山主 부산주','438','1명','산주의 가장 가까운 보좌. 부재 시 직무를 대행한다. 차기 후보로 자주 거론되나 그것만으로 후계자가 되지는 않는다.'],
+['元老會 원로회','—','7명','전직 산주·당주·중앙 간부 출신의 원로. 서열 밖에서 자문하고 견제하며, 전통과 후계, 중대 분쟁에 강한 발언권을 지닌다.'],
+['香主 향주','438','1명','칠조와 역대 산주 추모, 관우 제례, 금란보와 기록을 관장한다. 실무를 지휘하지는 않으나 예우상 당주와 같거나 조금 위에 선다.'],
+['堂主 당주','—','7명','각 당의 최고 책임자이자 실권자. 소속 형제에게는 산주보다 가까운 윗사람이며, 당의 분위기를 좌우한다.'],
+['副堂主 부당주','—','7명','당주의 이인자. 친형제 같은 사이일 수도, 서로를 견제하는 사이일 수도 있다.'],
+['紅棍 홍곤','426','여러 명','담력과 명성을 인정받은 무(武)의 간부. 중앙 직속이거나 각 당에 속한다. 명성이 특히 높으면 명예 칭호 쌍화홍곤(雙花紅棍)으로 불리며, 부당주보다 존경받기도 한다.'],
+['白紙扇 백지선','415','여러 명','학식과 지략의 참모. 산주나 당주의 책사로 일하며, 전직 전문직이나 고학력자가 적지 않다.'],
+['草鞋 초혜','432','여러 명','칠당 사이와 바깥 세계의 관계를 맡는 사교와 처세의 간부. 능글맞다는 인식이 있으나 사람마다 다르다.'],
+['四九仔 사구자','49','약 2,800명','정식 조직원. 몸담은 세월과 명성에 따라 대우가 다르며, 노련한 사구자는 젊은 간부에게도 존중받는다.'],
+['外圍 외곽','—','약 5,000명','지인, 가족, 협력자 등 정식 조직원이 아닌 관계 인원. 형제와 같은 권리나 지위는 없다.']];
+document.getElementById('ranks').innerHTML=rk.map(r=>`<tr><td><b>${r[0]}</b></td><td class="n">${r[1]}</td><td class="n">${r[2]}</td><td>${r[3]}</td></tr>`).join('');
+
+const H=[
+{k:'承',n:'承義堂',ko:'승의당',o:'第一堂',c:'#d8b25a',sym:'금빛 난초',col:'흑색 · 금색',v:'義',m:520,area:'야우마테이(油麻地) · 총당 주변',
+mo:'承先人之義，不負金蘭之名。',mk:'선대의 의리를 계승하고, 금란의 이름을 저버리지 않는다.',
+d:'금란회의 정통성을 가장 강하게 상징하는 당. 칠조의 초기 결사와 가장 깊이 이어져 있다고 여겨지며, 스스로를 본회의 정신적 뿌리라 생각한다. 선대의 규율과 예법, 연륜과 출신을 중시하고 오래된 조직원 가문 출신이 많지만 혈통만으로 자리를 얻지는 못한다. 젊은 형제는 능력과 함께 인내와 예의를 증명해야 한다.',
+at:'오래된 목조 당사, 관우상과 선대의 위패, 어두운 정장과 전통 복식, 엄격한 호칭과 절제된 말투.',
+pos:'원로회와 가장 가깝다. 전통을 논할 때 그 의견은 무겁지만, 역사적 우위를 지나치게 내세운다는 비판도 받는다.'},
+{k:'鎮',n:'鎮武堂',ko:'진무당',o:'第二堂',c:'#d2423a',sym:'호랑이',col:'암적색 · 흑색',v:'勇',m:600,area:'몽콕(旺角) · 삼수이포(深水埗)',
+mo:'虎不低頭，武不失義。',mk:'호랑이는 고개를 숙이지 않고, 무인은 의리를 잃지 않는다.',
+d:'칠당 중 가장 큰 당이자 금란회의 기개를 상징한다. 홍곤 출신이 많다. 겁쟁이보다 정직한 패배자를 높이 사고, 허세와 책임 회피를 경멸한다. 욕설과 장난이 오가는 거친 관계지만 오래된 형제에 대한 애착은 깊다. 무모함을 용기로 착각하거나 명예를 앞세워 남을 누르는 이도 있다.',
+at:'소란한 술자리와 식사, 가죽 재킷과 느슨한 정장, 흉터와 거친 인상, 직설적인 말투.',
+pos:'승의당이 권위라면 진무당은 위세다. 조직을 위해 가장 많이 피를 흘린다는 자부심이 있다.'},
+{k:'安',n:'永安堂',ko:'영안당',o:'第三堂',c:'#a9c0cf',sym:'학',col:'백색 · 회청색',v:'仁',m:350,area:'구룡성(九龍城) · 토과완(土瓜灣)',
+mo:'一堂安，百家寧。',mk:'한 당이 평안하면 백 가정이 편안하다.',
+d:'칠당 중 가장 온건한 당. 초기 상호부조의 정신을 중히 여기고 오래된 동네 공동체, 조직원 가족들과 깊이 얽혀 있다. 연장자가 어린 형제를 챙기는 가족적인 분위기지만, 그 정이 지나친 간섭과 개인의 선택을 막는 굴레가 되기도 한다. 온화함이 범죄 조직이라는 사실을 지우지는 않는다.',
+at:'오래된 찻집과 전통 식당, 소박한 실내, 가족 단위 식사, 차분한 말투와 연장자 중심의 문화.',
+pos:'칠당이 갈라질 때 중재의 목소리를 낸다. 유약하다는 평도 있으나 원로들의 신뢰가 두텁다.'},
+{k:'龍',n:'海龍堂',ko:'해룡당',o:'第四堂',c:'#6f9fd8',sym:'바다의 용',col:'남색 · 은색',v:'和',m:470,area:'홍함(紅磡) 부두 · 침사추이 해안',
+mo:'四海皆兄弟，風浪不離心。',mk:'온 바다의 사람이 형제이며, 풍랑 속에서도 마음은 떠나지 않는다.',
+d:'항구와 함께 자란 당. 선원과 부두 노동자의 역사에서 자유롭고 호탕한 문화가 생겼다. 격식을 답답해하고, 사석에서는 위아래 없이 어울린다. 외지인과 다양한 배경에 너그러워 출신이 가장 다양하며 외국어와 해외 경험에 익숙한 이가 많다. 그 자유가 방종이 되기도 한다.',
+at:'습한 항구 바람과 오래된 바, 바다가 보이는 식당, 풀어헤친 셔츠와 금 장신구, 호탕한 웃음.',
+pos:'적응력이 뛰어나다는 평. 전통을 존중하되 매이지 않아, 보수파에게는 품위를 가볍게 여긴다는 소리를 듣는다.'},
+{k:'德',n:'明德堂',ko:'명덕당',o:'第五堂',c:'#a77fd0',sym:'봉황',col:'자주색 · 금색',v:'禮',m:280,area:'호만틴(何文田) · 구룡탕(九龍塘)',
+mo:'智明於心，德重於言。',mk:'지혜는 마음에 밝고, 덕은 말보다 무겁다.',
+d:'가장 작지만 위상은 높은 당. 백지선 출신이 많고 학식과 판단력을 가장 중시한다. 감정에 휘둘리는 태도와 경솔한 언행을 경멸하며, 많이 말하기보다 정확히 말하기를 높이 친다. 서예, 문학, 역사에 조예 깊은 이도 있으나, 자부심이 지나쳐 다른 당을 무식하다 깔보기도 한다.',
+at:'오래된 서재와 응접실, 서예와 골동품, 차분한 찻자리, 단정한 정장과 안경, 은근한 비꼼.',
+pos:'금란회의 지성. 원로와 중앙 지도부가 그 의견을 귀담아듣는다. 진무당과는 힘과 지략의 자존심 경쟁.'},
+{k:'信',n:'廣信堂',ko:'광신당',o:'第六堂',c:'#e0743c',sym:'잉어',col:'주홍색 · 금색',v:'信',m:380,area:'침사추이(尖沙咀) · 조단(佐敦)',
+mo:'信立於人，義存於心。',mk:'신뢰는 사람 사이에 세우고, 의리는 마음에 간직한다.',
+d:'인간관계와 사교를 가장 중시하는 당. 초혜 출신이 많고 다른 당, 바깥 세계와 쉽게 친분을 맺는다. 사람의 마음을 읽고 관계를 지키는 능력을 높이 산다. 다정한 사람이 많다는 평판이 있지만 모든 호의가 진심은 아니며, 웃는 얼굴 뒤에 냉정한 계산을 숨긴 이도 있다.',
+at:'활기찬 고급 중식당과 연회, 웃음과 농담이 오가는 응접실, 세련된 정장과 화려한 장신구.',
+pos:'칠당 사이에 가장 폭넓은 친분을 유지한다. 그만큼 기회주의적이라는 평도 따른다.'},
+{k:'月',n:'玄月堂',ko:'현월당',o:'第七堂',c:'#b9bec6',sym:'검은 뱀',col:'흑색 · 은색',v:'忠',m:300,area:'웡타이신(黃大仙) · 다이아몬드힐(鑽石山)',
+mo:'月隱於夜，心不露於人。',mk:'달은 밤에 숨고, 마음은 사람에게 드러내지 않는다.',
+d:'가장 폐쇄적인 당. 다른 당과의 사적 교류가 적고, 형제 개인의 과거와 사생활을 묻지 않는 것을 예의로 여긴다. 겉으로는 차갑고 건조하지만 오래 함께한 이에 대한 신뢰는 깊다. 냉혹해서라기보다 감정을 드러내는 데 서툴거나 남과 거리를 두는 이가 많다. 소문은 많으나 대부분 확인되지 않았다.',
+at:'어두운 조명의 오래된 건물, 검은 목재와 은색 장식, 조용한 복도와 닫힌 문, 짧고 건조한 말투.',
+pos:'가장 독립적인 문화를 지녀 오해와 불신을 사기도 한다. 그러나 금란회에 대한 충성은 어느 당에도 뒤지지 않는다.'}];
+const rel={'承義堂':'영안당·명덕당과 우호, 진무당과 자존심 경쟁, 현월당과는 서로의 영역을 존중.','鎮武堂':'해룡당과 친밀, 승의당과 권위 대 공적의 경쟁, 명덕당과 의견 충돌, 현월당을 불신.','永安堂':'승의당·광신당과 우호, 진무당의 강경함을 우려하되 적대하지 않음, 현월당과 적당한 거리.','海龍堂':'진무당·광신당과 친밀, 명덕당과 격식 문제로 충돌, 승의당의 뿌리는 존중.','明德堂':'승의당·현월당과 우호, 진무당과 오래된 경쟁, 해룡당의 자유분방함과 충돌.','廣信堂':'영안당·해룡당과 우호, 승의당의 격식에 답답함, 현월당에는 호기심과 거리.','玄月堂':'명덕당과 우호, 진무당과 충돌, 승의당·영안당과 거리를 둔 존중, 광신당의 접근은 부담.'};
+document.getElementById('hallgrid').innerHTML=H.map(h=>`<article class="hall" style="--c:${h.c}">
+<header><div class="seal" aria-hidden="true">${h.k}</div><div><div class="ord">${h.o} · 칠조의 「${h.v}」</div><h3><span class="hz">${h.n}</span>${h.ko}</h3></div></header>
+<p class="motto">「${h.mo}」</p><p>${h.mk}</p>
+<dl class="meta"><dt>정식 조직원</dt><dd>약 ${h.m}명<div class="bar"><i style="width:${(h.m/600*100).toFixed(1)}%"></i></div></dd><dt>관할</dt><dd>${h.area}</dd><dt>상징</dt><dd>${h.sym} · ${h.col}</dd></dl>
+<p>${h.d}</p>
+<p class="mute" style="font-size:15px"><b style="color:var(--ink);font-weight:600">분위기</b> ${h.at}</p>
+<p class="mute" style="font-size:15px"><b style="color:var(--ink);font-weight:600">위상</b> ${h.pos}</p>
+<p class="rel"><b>다른 당과</b> ${rel[h.n]}</p>
+</article>`).join('');
+
+const ab=H.map(h=>h.ko.slice(0,2));
+const good=[[0,2],[0,4],[1,3],[2,5],[3,5],[4,6]],bad=[[0,1],[1,4],[1,6],[3,4]];
+const has=(L,a,b)=>L.some(p=>(p[0]==a&&p[1]==b)||(p[0]==b&&p[1]==a));
+let t='<thead><tr><th></th>'+H.map(h=>`<th style="color:${h.c}">${h.ko}</th>`).join('')+'</tr></thead><tbody>';
+H.forEach((h,i)=>{t+=`<tr><th style="color:${h.c}">${h.ko}</th>`+H.map((_,j)=>i==j?'<td class="s">—</td>':has(good,i,j)?'<td class="g">◎</td>':has(bad,i,j)?'<td class="x">✕</td>':'<td class="mute">·</td>').join('')+'</tr>'});
+document.getElementById('mx').innerHTML=t+'</tbody>';
+
+const vt=[['忠','충성을 저버리지 않는다','현월당'],['義','형제와의 의리를 잊지 않는다','승의당'],['信','자신의 말을 가볍게 여기지 않는다','광신당'],['禮','윗사람과 선대를 공경한다','명덕당'],['勇','두려움 앞에서 명예를 버리지 않는다','진무당'],['仁','타인의 은혜를 잊지 않는다','영안당'],['和','형제 사이의 화합을 중히 여긴다','해룡당']];
+document.getElementById('virtues').innerHTML=vt.map(v=>`<div><span class="hz">${v[0]}</span><span>${v[1]}</span><em>${v[2]}</em></div>`).join('');
+
+const tt=[['대로','大佬','형님, 우두머리'],['대가','大哥','큰형님'],['아가','阿哥','형, 가까운 연장자'],['형제','兄弟','동료 조직원'],['아숙','阿叔','아저씨, 연장자'],['노야','老爺','존경받는 어른'],['소야','少爺','도련님'],['사야','師爺','참모, 책사']];
+document.getElementById('titles').innerHTML=tt.map(r=>`<tr><td><b>${r[0]}</b></td><td class="hz n">${r[1]}</td><td>${r[2]}</td></tr>`).join('');
+
+const pl=[['金蘭總堂','금란총당','야우마테이','본회의 중앙 본당. 오래된 목재 기둥과 붉은 등불, 흑금색 장식. 정면에 일곱 난초의 문장이 걸려 있다. 산주의 집무실, 원로 응접실, 회의실, 칠조전이 있으며 젊은 형제들은 쉽게 드나들지 못한다.'],['七祖殿','칠조전','금란총당 안','칠조와 역대 산주의 위패를 모신 사당. 중앙에 관우상이 서 있고 향과 붉은 촛불, 오래된 나무 냄새가 가득하다. 입회식이 치러지는 본회에서 가장 신성한 곳.'],['金蘭樓','금란루','몽콕','오랜 역사의 고급 광둥 요리점. 붉은색과 짙은 목재의 전통 인테리어. 원로와 간부가 자주 찾고 결의일 연회가 열린다. 일반 손님도 드나들며 형제들의 가족에게도 익숙한 곳.'],['蘭苑','난원','구룡탕','역대 산주가 살아 온 저택. 서양식 건물과 중국식 정원이 섞여 있고, 정원 가득 난초가 자란다. 본회 소유로 산주 개인의 재산과는 구분되며 선대의 유품이 남아 있다.'],['夜蘭','야란','침사추이','붉은 조명과 검은 벨벳, 금빛 장식의 고급 나이트클럽. 젊은 간부와 형제들이 즐겨 찾는, 총당과는 정반대의 공간. 화려하고 퇴폐적인 홍콩의 밤 그 자체.']];
+document.getElementById('placegrid').innerHTML=pl.map(p=>`<div class="place"><span class="hz">${p[0]}</span><span class="loc">${p[1]} · ${p[2]}</span><p>${p[3]}</p></div>`).join('');
+}
+</script>
+</body>
+</html>
